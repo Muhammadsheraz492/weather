@@ -21,7 +21,7 @@ const App = () => {
        />
   <View style={{width:'90%',height:'40%',alignSelf:"center",justifyContent:"flex-end"}}> 
   <View style={{display:"flex",flexDirection:"row"}}>
-    {/* <Plus /> */}
+    <Plus />
     <Text>Add location</Text>
 
   </View>
