@@ -1,20 +1,44 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Animated, StyleSheet, Text, View } from 'react-native'
+import React from 'react'
 
-export default function App() {
+const App = () => {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text>First</Text>
+      <Animated.View style={styles.SecondConatiner}>
+        <Text>Second</Text>
+      </Animated.View>
     </View>
-  );
+  )
 }
+
+export default App
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#0049FF",
+    justifyContent: "center",
+    alignItems: "center"
+
   },
-});
+  SecondConatiner: {
+    position: "absolute",
+    flexGrow: 1,
+    backgroundColor: "#fff",
+    top: 0,
+    bottom: 0,
+    borderRadius:20,
+    right: 0,
+    left: 0,
+    marginTop:55,
+    // padding:150,
+    transform: [
+      {translateX:100},
+      {rotate:'10deg'}
+  
+  
+  ]
+  }
+
+})
