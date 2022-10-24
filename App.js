@@ -1,8 +1,9 @@
-import { Animated, SafeAreaView,StatusBar, StyleSheet,Image, Text, Touchable, TouchableOpacity, View } from 'react-native'
+import { Animated, SafeAreaView,StatusBar, StyleSheet,Image, Text, Touchable, TouchableOpacity, View,  } from 'react-native'
 import React, { useRef, useState } from 'react'
-import location from './assets/location.png'
-import { SvgCss, Svg, Circle } from "react-native-svg";
+import Location from './assets/location.svg'
+import Settings from './assets/settings.svg'
 import Plus from './assets/plus.svg'
+import { SimpleLineIcons } from '@expo/vector-icons';
 const App = () => {
   const animatedValue = useRef(new Animated.Value(0)).current
   const [index, setindex] = useState('')
@@ -19,14 +20,22 @@ const App = () => {
         backgroundColor="#000"
      
        />
-  <View style={{width:'90%',height:'40%',alignSelf:"center",justifyContent:"flex-end"}}> 
-  <View style={{display:"flex",flexDirection:"row"}}>
-    <Plus />
+  <View style={{width:'90%',height:'40%',alignSelf:"center",justifyContent:"flex-end",}}> 
+  <TouchableOpacity style={{width:"35%",flexDirection:"row",justifyContent:"space-around",bottom:20,left:12}}>
+    <Plus/>
     <Text>Add location</Text>
 
-  </View>
-    <Text>Add location</Text>
-    <Text>Add location</Text>
+  </TouchableOpacity>
+  <TouchableOpacity style={{width:"35%",flexDirection:"row",justifyContent:"space-around",left:5}}>
+    <Settings />
+    <Text>Settings</Text>
+
+  </TouchableOpacity>
+  <TouchableOpacity style={{width:"35%",flexDirection:"row",justifyContent:"space-around",top:20}}>
+    <Location />
+    <Text>Maps</Text>
+
+  </TouchableOpacity>
   </View>
       <Animated.View style={[styles.SecondConatiner, {
         borderRadius:animatedValue.interpolate({
@@ -64,7 +73,7 @@ const App = () => {
           } }
         >
           
-          <Text>Second</Text>
+          <SimpleLineIcons name="menu" size={24} color="black" />
 
         </TouchableOpacity>
       </Animated.View>
@@ -87,6 +96,7 @@ const styles = StyleSheet.create({
   SecondConatiner: {
     position: "absolute",
     flexGrow: 1,
+    padding:10,
     backgroundColor: "#fff",
     top: 0,
     bottom: 0,
